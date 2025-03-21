@@ -10,230 +10,98 @@
 #include <iostream>
 #include <vector>
 #include <string>
-using std::setprecision, ::round, std::cin, std::left, std::right,std::setw, std::cout, std::endl, std::ifstream, std::ostream, std::string, std::vector;
+using namespace std;
 
 //define class and private variables
 class Fighter {
 private:
     string name;
-    //using floats for all numerical variables - trying to figure out how to
-    //transition to integers and maintain float averages
+    //using floats for all numerical variables
     float wins, losses, draws, sigStrAcc, sigStrDef, tdAcc, tdDef, height, weight, sigStrPerMin,
     sigStrAbsPerMin, tdLandedPer15, avgSubAttemptsPer15;
 
-
 public:
-    // default constructor
-    Fighter () {
-        name = "Dana White";
-        wins = -1;
-        losses = -1;
-        draws = -1;
-        sigStrAcc = -1;
-        sigStrDef = -1;
-        tdAcc = -1;
-        tdDef = -1;
-        height = -1;
-        weight = -1;
-        sigStrPerMin = -1;
-        sigStrAbsPerMin = -1;
-        tdLandedPer15 = -1;
-        avgSubAttemptsPer15 = -1;
-    }
+    // Constructors
+    Fighter () {}
+    Fighter (string name,float wins, float losses, float draws, float sigStrAcc, float sigStrDef, float tdAcc,
+            float tdDef, float height, float weight, float sigStrPerMin, float sigStrAbsPerMin,
+            float tdLandedPer15, float avgSubAttemptsPer15) {}
 
-    Fighter (string name,
-            float wins,
-            float losses,
-            float draws,
-            float sigStrAcc,
-            float sigStrDef,
-            float tdAcc,
-            float tdDef,
-            float height,
-            float weight,
-            float sigStrPerMin,
-            float sigStrAbsPerMin,
-            float tdLandedPer15,
-            float avgSubAttemptsPer15) {
-        this->name = name;
-        this->wins = wins;
-        this->losses = losses;
-        this->draws = draws;
-        this->sigStrAcc = sigStrAcc;
-        this->sigStrDef = sigStrDef;
-        this->tdAcc = tdAcc;
-        this->tdDef = tdDef;
-        this->height = height;
-        this->weight = weight;
-        this->sigStrPerMin = sigStrPerMin;
-        this->sigStrAbsPerMin = sigStrAbsPerMin;
-        this->tdLandedPer15 = tdLandedPer15;
-        this->avgSubAttemptsPer15 = avgSubAttemptsPer15;
-    }
-
-    // getters
-    // get fighter name
-    string getName() const {
-            return name;
-    }
+    // Getters
+    string getName() const {}
     // get fighter wins
-    int getWins() const {
-        return wins;
-    }
+    int getWins() const {}
     // get fighter losses
-    int getLosses() const {
-        return losses;
-    }
+    int getLosses() const {}
     // get fighter draws
-    int getDraws() const {
-        return draws;
-    }
+    int getDraws() const {}
     // get fighter significant strike accuracy percentage
-    int getSigStrAcc() const {
-        return sigStrAcc;
-    }
+    int getSigStrAcc() const {}
     // get fighter significant strikes defended percentage
-    int getSigStrDef() const {
-        return sigStrDef;
-    }
+    int getSigStrDef() const {}
     // get fighter takedown accuracy percentage
-    int getTdAcc() const {
-        return tdAcc;
-    }
+    int getTdAcc() const {}
     //get fighter take down defence percentage
-    int getTdDef() const {
-        return tdDef;
-    }
+    int getTdDef() const {}
     // get fighter height in cm
-    float getHeight() const {
-        return height;
-    }
+    float getHeight() const {}
     // get fighter weight in kg
-    float getWeight() const {
-        return weight;
-    }
+    float getWeight() const {}
     // get fighter significant strikes landed per minute
-    float getSigStrPerMin() const {
-        return sigStrPerMin;
-    }
+    float getSigStrPerMin() const {}
     // get fighter sinigicant strikes absorbed per minute
-    float getSigStrAbsPerMin() const {
-        return sigStrAbsPerMin;
-    }
+    float getSigStrAbsPerMin() const {}
     // get fighter avg takedowns landed per 15 minutes
-    float getTdLandedPer15() const {
-        return tdLandedPer15;
-    }
+    float getTdLandedPer15() const {}
     // get fighter avg submissions attempted every 15 minutes
-    float getAvgSubAttemptsPer15() const {
-        return avgSubAttemptsPer15;
-    }
+    float getAvgSubAttemptsPer15() const {}
 
 
     //setters
     // set fighter name
-    void setName(string name) {
-        this->name = name;
-    }
+    void setName(string name) {}
     // set fighter wins
-    void setWins(int wins) {
-        this->wins = wins;
-    }
+    void setWins(int wins) {}
     // set fighter losses
-    void setLosses(int losses) {
-        this->losses = losses;
-    }
+    void setLosses(int losses) {}
     // set fighter draws
-    void setDraws(int draws) {
-        this->draws = draws;
-    } // set fighter significant strike accuracy percentage
-    void setSigStrAcc(int sigStrAcc) {
-        this->sigStrAcc = sigStrAcc;
-    }
+    void setDraws(int draws) {}
+    // set fighter significant strike accuracy percentage
+    void setSigStrAcc(int sigStrAcc) {}
     // set fighter significant strikes defended percentage
-    void setSigStrDef(int sigStrDef) {
-        this->sigStrDef = sigStrDef;
-    }
+    void setSigStrDef(int sigStrDef) {}
     // set fighter takedown accuracy percentage
-    void setTdAcc(int tdAcc) {
-        this->tdAcc = tdAcc;
-    }
+    void setTdAcc(int tdAcc) {}
     // set fighter takedown defense percentage
-    void setTdDef(int tdDef) {
-        this->tdDef = tdDef;
-    }
+    void setTdDef(int tdDef) {}
     // set fighter weight
-    void setHeight(float height) {
-        this->height = height;
-    }
+    void setHeight(float height) {}
     // set fighter height
-    void setWeight(float weight) {
-        this->weight = weight;
-    }
+    void setWeight(float weight) {}
     // set fighter significant strikes landed per min
-    void setSigStrPerMin(float sigStrPerMin) {
-        this->sigStrPerMin = sigStrPerMin;
-    }
+    void setSigStrPerMin(float sigStrPerMin) {}
     // set fighter significant strikes absorbed per minute
-    void setSigStrAbsPerMin(float sigStrAbsPerMin) {
-        this->sigStrAbsPerMin = sigStrAbsPerMin;
-    }
+    void setSigStrAbsPerMin(float sigStrAbsPerMin) {}
     // set fighter takedowns landed every 15 mins
-    void setTdLandedPer15(float tdLandedPer15) {
-        this->tdLandedPer15 = tdLandedPer15;
-    }
+    void setTdLandedPer15(float tdLandedPer15) {}
     // set fighter submission attempts every 15 minutes
-    void setAvgSubAttemptsPer15(float avgSubAttemptsPer15) {
-        this->avgSubAttemptsPer15 = avgSubAttemptsPer15;
-    }
+    void setAvgSubAttemptsPer15(float avgSubAttemptsPer15) {}
 
     // overloading << operator
-    friend ostream& operator << (ostream& outs, const Fighter& obj) {
-        //set appropriate widths and precision of for average row
-
-        outs<<left<<setw(25)<<obj.name;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.wins;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.losses;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.draws;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.sigStrAcc;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.sigStrDef;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.tdAcc;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.tdDef;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.height;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.weight;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.sigStrPerMin;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.sigStrAbsPerMin;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.tdLandedPer15;
-        outs<<right<<setw(7)<<setprecision(4)<<obj.avgSubAttemptsPer15;
-
-        return outs;
-    }
+    friend ostream& operator << (ostream& outs, const Fighter& obj) {}
 
     //overloading < operator
-    bool operator < (const Fighter& obj) const {
-        return this->getName() < obj.getName();
-    }
+    bool operator < (const Fighter& obj) const {}
     //overloading > operator
-    bool operator > (const Fighter& obj) const {
-        return this->getName() > obj.getName();
-    }
+    bool operator > (const Fighter& obj) const {}
     //overloading <= operator
-    bool operator <= (const Fighter& obj) const {
-        return this->getName() <= obj.getName();
-    }
+    bool operator <= (const Fighter& obj) const {}
     //overloading >= operator
-    bool operator >= (const Fighter& obj) const {
-        return this->getName() >= obj.getName();
-    }
+    bool operator >= (const Fighter& obj) const {}
     //overloading == operator
-    bool operator == (const Fighter& obj) const {
-        return this->getName() == obj.getName();
-    }
-
+    bool operator == (const Fighter& obj) const {}
     //overloading != operator
-    bool operator != (const Fighter& obj) const {
-        return this->getName() != obj.getName();
-    }
+    bool operator != (const Fighter& obj) const {}
 
 
 };
@@ -243,156 +111,14 @@ public:
  * @param fighters a vector of fighter objects
  * @return bool true if data read successfully, false if not
  */
-bool getDataFromFile(vector<Fighter>& fighters) {
-    ifstream fileIn;
-    fileIn.open("../fighters.csv");
-
-    if (fileIn) {
-        cout << "File opened successfully." << endl;
-        string header;
-        getline(fileIn, header);
-        cout << header << endl;
-        // declare default variables to read in
-        string name = "Dana White", newline;
-        int wins = -1, losses = -1, draws = -1, sigStrAcc = -1, sigStrDef = -1, tdAcc = -1, tdDef = -1;
-        float height = -1, weight = -1, sigStrPerMin = -1, sigStrAbsPerMin = -1, tdLandedPer15 = -1, avgSubAttemptsPer15 = -1;
-        char comma;
-
-        while (fileIn) {
-            //read in name
-            getline(fileIn, name, ',');
-            //read in wins
-            fileIn >> wins;
-            if (!fileIn) {
-                // set wins to default since there is no data
-                wins = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in losses
-            fileIn >> losses;
-            if (!fileIn) {
-                //set losses to default since there is no data
-                losses = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in draws
-            fileIn >> draws;
-            if (!fileIn) {
-                draws = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in sig strike accuracy
-            fileIn >> sigStrAcc;
-            if (!fileIn) {
-                sigStrAcc = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in sig strike defence percentage
-            fileIn >> sigStrDef;
-            if (!fileIn) {
-                sigStrDef = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in td acc percentage
-            fileIn >> tdAcc;
-            if (!fileIn) {
-                tdAcc = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in td def percentage
-            fileIn >> tdDef;
-            if (!fileIn) {
-                tdDef = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in height
-            fileIn >> height;
-            if (!fileIn) {
-                height = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in weight
-            fileIn >> weight;
-            if (!fileIn) {
-                weight = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in sig strike landed per min
-            fileIn >> sigStrPerMin;
-            if (!fileIn) {
-                sigStrPerMin = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in sig strikes absorbed per minute
-            fileIn >> sigStrAbsPerMin;
-            if (!fileIn) {
-                sigStrAbsPerMin = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in takedowns landed every 15min
-            fileIn >> tdLandedPer15;
-            if (!fileIn) {
-                tdLandedPer15 = -1;
-                fileIn.clear();
-            }
-            fileIn >> comma;
-            // read in average submissions attempted every 15 mins
-            // check for eof or end of record
-            if(fileIn.peek()=='\n' || fileIn.peek()=='\r' || fileIn.peek() == EOF) {
-                //no data
-                avgSubAttemptsPer15 = -1;
-            } else {
-                //there is data
-                fileIn>>avgSubAttemptsPer15;
-            }
-            //remove end of line character
-            getline(fileIn, newline);
-            //push to vector
-            fighters.push_back(Fighter(name, wins, losses, draws, sigStrAcc, sigStrDef, tdAcc, tdDef, height,
-                                            weight, sigStrPerMin, sigStrAbsPerMin, tdLandedPer15, avgSubAttemptsPer15));
-        }
-
-    } else {
-        // if file is not opened
-        cout << "File could not be opened." << endl;
-        return false;
-    }
-    //close file and reteurn true to indicate that data was read in succesfully
-    fileIn.close();
-    return true;
-};
+bool getDataFromFile(vector<Fighter>& fighters) {};
 
 /**
  * avgWins finds the average number of wins across all fighters in the dataset
  * @param fighters vector of Fighter objects
  * @return float avg wins - the average wins across all fighters
  */
-float avgWins(const vector<Fighter>& fighters) {
-    //check for data
-    if (fighters.size() != 0) {
-        //define vars
-        float avgWins = 0;
-        float totalWins=0;
-        for (int i = 0; i < fighters.size(); i++) {
-            totalWins+=fighters[i].getWins();
-            }
-        avgWins = totalWins/fighters.size();
-        return avgWins;
-    }
-cout << "Vector is empty - unable to calculate average" << endl;
-return 0.0;
-}
+float avgWins(const vector<Fighter>& fighters) {}
 
 /**
  * method findFighter takes a vector of fighters, asks the user which fighter they are looking for, if fighter in data
@@ -400,148 +126,19 @@ return 0.0;
  * @param fighters vector of Fighter objects
  * @return int i the index of the searched fighted
  */
-int findFighter(vector<Fighter>& fighters) {
-    //prompt user
-    cout << "Enter fighter name: ";
-    //initialize name variable
-    string name;
-    // get input and store in variable, use getline to account for spaces
-    getline(cin, name);
-    // search vector
-    for (int i = 0; i < fighters.size(); i++) {
-        //return index if found
-        if(fighters[i].getName().compare(name) == 0) {
-            return i;
-        }
-    }
-    // if not found return unused index
-    cout << "Fighter index not found" << endl;
-    return -1;
-}
+int findFighter(vector<Fighter>& fighters) {}
 
 /**
  * wlRatio finds the win to loss ratio of a specified fighter
  * @param fighters vector of Fighter objects
  * @return float ratio, the ratio of wins to losses a fighter has, if the fighter is undefeated it just returns wins
  */
-float wlRatio(vector<Fighter>& fighters) {
-    // find specified fighter using findFighter method
-    int i = findFighter(fighters);
-    //handle for division by 0 if fighter has not lost
-    if (fighters[i].getLosses()!=0) {
-        // calculate and return w/l ratio
-        float ratio = float(fighters[i].getWins())/float(fighters[i].getLosses());
-        return ratio;
-    }
-    // special message indicating fighter is undefeated
-    cout << fighters[i].getName() << " is undefeated" << endl;
-    return fighters[i].getWins();
-}
+float wlRatio(vector<Fighter>& fighters) {}
 
 /**
  * get averages calculates the average value for every field in the data, and pushes it to the vector
  * @param fighters a vector of fighter objects
  * @return bool - weather or not pushing averages was successful
  */
-bool getAverages(vector<Fighter>& fighters) {
-    //declare vars
-    float totalWins = 0, totalLosses = 0, totalDraws = 0, totalSigStrAcc = 0, totalSigStrDef = 0, totalTdAcc = 0,
-    totalTdDef = 0, totalHeight = 0, totalWeight = 0, totalsigStrPerMin = 0, totalSigStrAbsPerMin = 0,
-    totalTdLandedPer15 = 0, totalSubAttemptsPer15 = 0;
-
-    // count valid data points for each variable
-    int datapointWins = 0, datapointLosses = 0, datapointDraws = 0, datapointSigStrAcc = 0, datapointSigStrDef = 0, datapointTdAcc = 0,
-    datapointTdDef = 0, datapointHeight = 0, datapointWeight = 0, datapointsigStrPerMin = 0, datapointSigStrAbsPerMin = 0,
-    datapointTdLandedPer15 = 0, datapointSubAttemptsPer15 = 0;
-
-    //declare average variables
-    float avgWins = 0, avgLosses = 0, avgDraws = 0, avgSigStrAcc = 0, avgSigStrDef = 0, avgTdAcc = 0,
-    avgTdDef = 0, avgHeight = 0, avgWeight = 0, avgSigStrPerMin = 0, avgSigStrAbsPerMin = 0,
-    avgTdLandedPer15 = 0, avgSubAttemptsPer15 = 0;
-    //if the vector has data
-    if (fighters.size() != 0) {
-        //loop through each record,
-        //if the datapoint is valid - increment datapoint counter and
-        //add the value of each field to its respective total variable
-        //otherwise move on to the next field
-        for (int i = 0; i < fighters.size(); i++) {
-            if (fighters[i].getWins()!=-1) {
-                totalWins+=fighters[i].getWins();
-                datapointWins++;
-            }
-            if (fighters[i].getLosses()!=-1) {
-                totalLosses+=fighters[i].getLosses();
-                datapointLosses++;
-            }
-            if (fighters[i].getDraws()!=-1) {
-                totalDraws+=fighters[i].getDraws();
-                datapointDraws++;
-            }
-            if (fighters[i].getSigStrAcc()!=-1) {
-                totalSigStrAcc+=fighters[i].getSigStrAcc();
-                datapointSigStrAcc++;
-            }
-            if (fighters[i].getSigStrDef()!=-1) {
-                totalSigStrDef+=fighters[i].getSigStrDef();
-                datapointSigStrDef++;
-            }
-            if (fighters[i].getTdAcc()!=-1) {
-                totalTdAcc+=fighters[i].getTdAcc();
-                datapointTdAcc++;
-            }
-            if (fighters[i].getTdDef()!=-1) {
-                totalTdDef+=fighters[i].getTdDef();
-                datapointTdDef++;
-            }
-            if (fighters[i].getHeight()!=-1) {
-                totalHeight+=fighters[i].getHeight();
-                datapointHeight++;
-            }
-            if (fighters[i].getWeight()!=-1) {
-                totalWeight+=fighters[i].getWeight();
-                datapointWeight++;
-            }
-            if (fighters[i].getSigStrPerMin()!=-1) {
-                totalsigStrPerMin+=fighters[i].getSigStrPerMin();
-                datapointsigStrPerMin++;
-            }
-            if (fighters[i].getSigStrAbsPerMin()!=-1) {
-                totalSigStrAbsPerMin+=fighters[i].getSigStrAbsPerMin();
-                datapointSigStrAbsPerMin++;
-            }
-            if (fighters[i].getTdAcc()!=-1) {
-                totalTdLandedPer15+=fighters[i].getTdLandedPer15();
-                datapointTdLandedPer15++;
-            }
-            if (fighters[i].getTdDef()!=-1) {
-                totalSubAttemptsPer15+=fighters[i].getAvgSubAttemptsPer15();
-                datapointSubAttemptsPer15++;
-            }
-        }
-        // calculate all averages and set name
-        string name = "Average";
-        avgWins = totalWins/datapointWins;
-        avgLosses = totalLosses/datapointLosses;
-        avgDraws = totalDraws/datapointDraws;
-        avgSigStrAcc = totalSigStrAcc/datapointSigStrAcc;
-        avgSigStrDef = totalSigStrDef/datapointSigStrDef;
-        avgTdAcc = totalTdAcc/datapointTdAcc;
-        avgTdDef = totalTdDef/datapointTdDef;
-        avgHeight = totalHeight/datapointHeight;
-        avgWeight = totalWeight/datapointWeight;
-        avgSigStrPerMin = totalsigStrPerMin/datapointsigStrPerMin;
-        avgSigStrAbsPerMin = totalSigStrAbsPerMin/datapointSigStrAbsPerMin;
-        avgTdLandedPer15 = totalTdLandedPer15/datapointTdLandedPer15;
-        avgSubAttemptsPer15 = totalSubAttemptsPer15/datapointSubAttemptsPer15;
-
-        //push averages to the vector and return true to indicate success
-        fighters.push_back(Fighter(name, avgWins, avgLosses, avgDraws, avgSigStrAcc, avgSigStrDef,
-            avgTdAcc, avgTdDef, avgHeight, avgWeight, avgSigStrPerMin, avgSigStrAbsPerMin,
-            avgTdLandedPer15, avgSubAttemptsPer15));
-        return true;
-
-    }
-        cout << "Vector is empty - unable to calculate averages" << endl;
-        return false;
-}
+bool getAverages(vector<Fighter>& fighters) {}
 #endif //FIGHTER_H

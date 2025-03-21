@@ -15,4 +15,7 @@ add_executable(Project4
         sorting-algorithms/radixSort.h
         sorting-algorithms/selectionSort.h
         main.cpp
-        stability-test/contactsList.h)
+        stability-test/contactsList.h
+        Fighter.cpp
+        Fighter.h
+)
