@@ -91,3 +91,7 @@ The project is out of 90 points.
 | 15 pts          | Sort the 100, 200, … 1000 objects according to the directions above.             |
 | 32 pts          | Record the correct number of reads and allocations for each sort.                |
 | 25 pts          | Report: content, formatting, professional, grammatically correct, cites sources. |
+
+### Citations
+OS Path Basename for Naming
+https://www.geeksforgeeks.org/python-os-path-basename-method/
