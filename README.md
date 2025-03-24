@@ -1,5 +1,12 @@
-# CS 2240 Project 4
+# CS 2300 Applied Project
 
+## Embedded Graphs
+![Bubble Sort Graph](C:\Users\taylu\OneDrive\Desktop\CS2300\Module_3\M3AP-tdesai-lmendes\images\BubbleDataGraph.png)
+![Heap Sort Graph](\images\HeapDataGraph.png)
+![Merge Sort Graph](.\images\MergeDataGraph.png)
+![Quick Sort Graph](..\images\QuickDataGraph.png)
+
+# Instructions from Previous Project
 For this project, you will sort the 1000 objects from your data set. You will modify each sorting algorithm to collect data. You will analyze the results from the different sorting algorithms. You will test the stability of each algorithm.
 
 ## Implement
